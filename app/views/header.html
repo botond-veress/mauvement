@@ -1,0 +1,19 @@
+﻿<header id="header" data-bind="css: { invert: menu.opened }, preventBodyScroll: menu.opened">
+    <div class="content fit">
+        <a href="#" class="logo" data-bind="attr: { href: routeManager.distinct.blog.hash }">
+            <i class="icon-logo"></i>
+        </a>
+        <div class="menu" data-bind="with: menu">
+            <div class="menu-button" data-bind="click: toggle, css: { open: opened }">
+                <div class="lines"></div>
+            </div>
+        </div>
+        <div class="navigation" data-bind="css: { open: menu.opened }">
+            <div class="navigation-items" data-bind="foreach: navigationManager.router.visibleNavigationModel">
+                <div class="navigation-item">
+                    <a href="javascript:void(0)" class="navigation-link" data-bind="text: title, attr: { href: hash }, css: { active: isActive }"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

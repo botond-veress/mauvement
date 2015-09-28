@@ -1,0 +1,26 @@
+﻿<div id="home" class="fit">
+    <div class="categories" data-bind="foreach: categoryManager.categories.list, css: { expanded: categoryManager.categories.more().opened }">
+        <a href="javascript:void(0);" class="category-item" data-bind="text: name, attr: { id: uid, href: hash }, click: $parent.categoryManager.categories.list.activate, css: { active: active }"></a>
+    </div>
+    <div class="post-container" data-bind="css: { ready: postManager.pages.ready }">
+        <div class="post-message" data-bind="with: categoryManager.categories.all, visible: postManager.pages.message">
+            Uhm, it looks like we have nothing around here.<br />
+            Try to search in <a href="javascript:void(0);" class="all-the-categories" data-bind="attr: { id: uid, href: hash }, click: $parent.categoryManager.categories.list.activate">all the categories</a>.
+        </div>
+        <div class="posts" data-bind="foreach: postManager.pages, infinite: { offset: 1000, disable: postManager.pages.disabled, callback: postManager.getNext }">
+            <!-- ko foreach: posts -->
+            <div class="post-item column-desktop-3 column-tablet-4 column-mobile-6" data-bind="css: { visible: !$parent.posts.loading(), draft: draft }">
+                <a href="javascript:void(0);" target="_self" class="post-item-link" data-bind="attr: { href: hash }, delay: { factor: $index, base: 50, offset: 100 }">
+                    <span class="post-item-image">
+                        <span class="post-item-image-background" data-bind="backgroundImage: { url: image, callback: loaded }"></span>
+                    </span>
+                    <span class="post-item-title" data-bind="html: title, attr: { title: title }"></span>
+                </a>
+            </div>
+            <!-- /ko -->
+        </div>
+        <div class="loader-container max" data-bind="css: { visible: !postManager.pages.end() }">
+            <div class="loader loader-rectangle"></div>
+        </div>
+    </div>
+</div>

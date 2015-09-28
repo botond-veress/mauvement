@@ -1,0 +1,215 @@
+﻿@import (reference) '_theme.less';
+
+.post-content() {
+    strong {
+        font-weight: 600;
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
+
+    blockquote {
+        border-left: 3px solid red;
+        opacity: 0.8;
+        font-style: italic;
+    }
+
+    del {
+        opacity: 0.8;
+        text-decoration: line-through;
+    }
+
+    ins {
+        background: #fff9c0;
+    }
+
+    ul, ol {
+        margin-left: 28px;
+    }
+
+    ul {
+        list-style-type: disc;
+    }
+
+    ol {
+        list-style-type: decimal;
+    }
+
+    code {
+        font-family: Inconsolata, monospace;
+    }
+
+    p {
+        margin-bottom: 28px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 600;
+        margin: 56px 0 28px;
+    }
+
+    h1 {
+        font-size: 35px;
+        font-size: 2em;
+        line-height: 1.2308;
+    }
+
+    h2 {
+        font-size: 29px;
+        font-size: 1.85em;
+        line-height: 1.2069;
+    }
+
+    h3 {
+        font-size: 24px;
+        font-size: 1.6em;
+        line-height: 1.1667;
+    }
+
+    h4 {
+        font-size: 20px;
+        font-size: 1.45em;
+        line-height: 1.4;
+    }
+
+    h5, h6 {
+        font-size: 1.3em;
+        letter-spacing: 0.1em;
+        line-height: 1.2353;
+        text-transform: uppercase;
+    }
+
+    pre {
+        background-color: #fcfcfc;
+        border: 1px solid #eaeaea;
+        line-height: 1.2353;
+        margin-bottom: 28px;
+        max-width: 100%;
+        overflow: auto;
+        padding: 14px;
+        white-space: pre;
+        white-space: pre-wrap;
+        -ms-word-wrap: break-word;
+        word-wrap: break-word;
+    }
+
+    .alignnone {
+        margin: 5px 0 20px;
+    }
+
+    .aligncenter,
+    div.aligncenter {
+        display: block;
+        margin: 5px auto;
+    }
+
+    .alignright {
+        float: right;
+        margin: 5px 0 20px;
+    }
+
+    .alignleft {
+        float: left;
+        margin: 5px 0 20px;
+    }
+
+    a img.alignright {
+        float: right;
+        margin: 5px 0 20px;
+    }
+
+    a img.alignnone {
+        margin: 5px 0 20px;
+    }
+
+    a img.alignleft {
+        float: left;
+        margin: 5px 0 20px;
+    }
+
+    a img.aligncenter {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    img,
+    .wp-caption {
+        display: block;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+    }
+
+    .wp-caption {
+        /*text-align: center;*/
+    }
+
+        .wp-caption.alignnone {
+            margin: 5px 0 20px;
+        }
+
+        .wp-caption.alignleft {
+            margin: 5px 0 20px;
+        }
+
+        .wp-caption.alignright {
+            margin: 5px 0 20px;
+        }
+
+        .wp-caption img {
+            border: 0 none;
+            height: auto;
+            margin: 0;
+            padding: 0;
+            width: auto;
+        }
+
+        .wp-caption .wp-caption-text {
+            font-size: 0.8em;
+            margin: 0;
+            padding: 0 0 5px;
+            color: #707070;
+            color: fade(#333, 70%);
+        }
+
+    /* Text meant only for screen readers. */
+    .screen-reader-text {
+        clip: rect(1px, 1px, 1px, 1px);
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
+
+        .screen-reader-text:focus {
+            background-color: #f1f1f1;
+            border-radius: 3px;
+            box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+            clip: auto !important;
+            color: #21759b;
+            display: block;
+            font-size: 14px;
+            font-size: 0.875rem;
+            font-weight: bold;
+            height: auto;
+            left: 5px;
+            line-height: normal;
+            padding: 15px 23px 14px;
+            text-decoration: none;
+            top: 5px;
+            width: auto;
+            z-index: 100000; /* Above WP toolbar. */
+        }
+}

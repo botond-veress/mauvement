@@ -1,0 +1,9 @@
+php_flag zlib.output_compression On
+php_value zlib.output_compression_level 5
+
+<ifModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !\.(js|css|gif|jpg|jpeg|png|ico|swf|pdf|html|php|json|xml|ttf|woff|woff2|eot|svg)$
+  RewriteCond %{REQUEST_URI} !^index
+  RewriteRule (.*) index.html [L]
+</ifModule>

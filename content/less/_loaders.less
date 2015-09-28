@@ -1,0 +1,546 @@
+﻿@import (reference) '_theme.less';
+@import (reference) '_core.less';
+@import (once) '_animations.less';
+
+.loader-container {
+    .stretch;
+    opacity: 0;
+    visibility: hidden;
+    -moz-transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out;
+    -o-transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out;
+    -webkit-transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out;
+    transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out;
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &.max {
+        max-height: 400px;
+    }
+
+    .loader {
+        .loader.visible;
+    }
+}
+
+.loader {
+    position: relative;
+    margin: 0 auto;
+    opacity: 0;
+    visibility: hidden;
+    -moz-transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out;
+    -o-transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out;
+    -webkit-transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out;
+    transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out;
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &.loader-circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        -moz-animation: loader-circle 3s ease-in-out both infinite;
+        -o-animation: loader-circle 3s ease-in-out both infinite;
+        -webkit-animation: loader-circle 3s ease-in-out both infinite;
+        animation: loader-circle 3s ease-in-out both infinite;
+
+        &.loader-circle-multiple {
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                -moz-animation: loader-circle 3s ease-in-out both infinite;
+                -o-animation: loader-circle 3s ease-in-out both infinite;
+                -webkit-animation: loader-circle 3s ease-in-out both infinite;
+                animation: loader-circle 3s ease-in-out both infinite;
+            }
+
+            &:before {
+                -moz-animation-delay: 1s;
+                -o-animation-delay: 1s;
+                -webkit-animation-delay: 1s;
+                animation-delay: 1s;
+            }
+
+            &:after {
+                -moz-animation-delay: 0.5s;
+                -o-animation-delay: 0.5s;
+                -webkit-animation-delay: 0.5s;
+                animation-delay: 0.5s;
+            }
+        }
+    }
+
+    &.loader-rectangle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 25px;
+        height: 25px;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            border: 1px solid transparent;
+        }
+
+        &:before {
+            top: 0;
+            left: 0;
+            border-top: 1px solid #333;
+            border-right: 1px solid #333;
+            -webkit-animation: loader-rectangle-tl 4s ease-in-out infinite;
+            -moz-animation: loader-rectangle-tl 4s ease-in-out infinite;
+            -o-animation: loader-rectangle-tl 4s ease-in-out infinite;
+            animation: loader-rectangle-tl 4s ease-in-out infinite;
+        }
+
+        &:after {
+            right: 0;
+            bottom: 0;
+            border-bottom: 1px solid #333;
+            border-left: 1px solid #333;
+            -moz-animation: loader-rectangle-br 4s ease-in-out infinite 1s;
+            -o-animation: loader-rectangle-br 4s ease-in-out infinite 1s;
+            -webkit-animation: loader-rectangle-br 4s ease-in-out infinite 1s;
+            animation: loader-rectangle-br 4s ease-in-out infinite 1s;
+        }
+    }
+}
+
+@keyframes loader-rectangle-tl {
+    0% {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+    }
+
+    12.5% {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0;
+    }
+
+    25% {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    75% {
+        top: auto;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    87.5% {
+        top: auto;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 100%;
+    }
+
+    100% {
+        top: auto;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+    }
+}
+
+@-moz-keyframes loader-rectangle-tl {
+    0% {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+    }
+
+    12.5% {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0;
+    }
+
+    25% {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    75% {
+        top: auto;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    87.5% {
+        top: auto;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 100%;
+    }
+
+    100% {
+        top: auto;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+    }
+}
+
+@-webkit-keyframes loader-rectangle-tl {
+    0% {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+    }
+
+    12.5% {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0;
+    }
+
+    25% {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    75% {
+        top: auto;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    87.5% {
+        top: auto;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 100%;
+    }
+
+    100% {
+        top: auto;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+    }
+}
+
+@keyframes loader-rectangle-br {
+    0% {
+        top: auto;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+    }
+
+    12.5% {
+        top: auto;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0;
+    }
+
+    25% {
+        top: auto;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    75% {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    87.5% {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 100%;
+    }
+
+    100% {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+    }
+}
+
+@-moz-keyframes loader-rectangle-br {
+    0% {
+        top: auto;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+    }
+
+    12.5% {
+        top: auto;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0;
+    }
+
+    25% {
+        top: auto;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    75% {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    87.5% {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 100%;
+    }
+
+    100% {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+    }
+}
+
+@-webkit-keyframes loader-rectangle-br {
+    0% {
+        top: auto;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+    }
+
+    12.5% {
+        top: auto;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0;
+    }
+
+    25% {
+        top: auto;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    75% {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    87.5% {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 100%;
+    }
+
+    100% {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+    }
+}
+
+@-moz-keyframes loader-circle {
+    0% {
+        -moz-transform: translate(-50%, -50%) scale(0.5);
+        -ms-transform: translate(-50%, -50%) scale(0.5);
+        -o-transform: translate(-50%, -50%) scale(0.5);
+        -webkit-transform: translate(-50%, -50%) scale(0.5);
+        transform: translate(-50%, -50%) scale(0.5);
+        background: fade(#000, 80%);
+    }
+
+    50% {
+        -moz-transform: translate(-50%, -50%) scale(1);
+        -ms-transform: translate(-50%, -50%) scale(1);
+        -o-transform: translate(-50%, -50%) scale(1);
+        -webkit-transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
+        background: fade(#000, 10%);
+    }
+
+    100% {
+        -moz-transform: translate(-50%, -50%) scale(0.5);
+        -ms-transform: translate(-50%, -50%) scale(0.5);
+        -o-transform: translate(-50%, -50%) scale(0.5);
+        -webkit-transform: translate(-50%, -50%) scale(0.5);
+        transform: translate(-50%, -50%) scale(0.5);
+        background: fade(#000, 80%);
+    }
+}
+
+@-webkit-keyframes loader-circle {
+    0% {
+        -moz-transform: translate(-50%, -50%) scale(0.5);
+        -ms-transform: translate(-50%, -50%) scale(0.5);
+        -o-transform: translate(-50%, -50%) scale(0.5);
+        -webkit-transform: translate(-50%, -50%) scale(0.5);
+        transform: translate(-50%, -50%) scale(0.5);
+        background: #000;
+    }
+
+    50% {
+        -moz-transform: translate(-50%, -50%) scale(1);
+        -ms-transform: translate(-50%, -50%) scale(1);
+        -o-transform: translate(-50%, -50%) scale(1);
+        -webkit-transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
+        background: fade(#000, 10%);
+    }
+
+    100% {
+        -moz-transform: translate(-50%, -50%) scale(0.5);
+        -ms-transform: translate(-50%, -50%) scale(0.5);
+        -o-transform: translate(-50%, -50%) scale(0.5);
+        -webkit-transform: translate(-50%, -50%) scale(0.5);
+        transform: translate(-50%, -50%) scale(0.5);
+        background: #000;
+    }
+}
+
+@keyframes loader-circle {
+    0% {
+        -moz-transform: translate(-50%, -50%) scale(0.5);
+        -ms-transform: translate(-50%, -50%) scale(0.5);
+        -o-transform: translate(-50%, -50%) scale(0.5);
+        -webkit-transform: translate(-50%, -50%) scale(0.5);
+        transform: translate(-50%, -50%) scale(0.5);
+        background: #000;
+    }
+
+    50% {
+        -moz-transform: translate(-50%, -50%) scale(1);
+        -ms-transform: translate(-50%, -50%) scale(1);
+        -o-transform: translate(-50%, -50%) scale(1);
+        -webkit-transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
+        background: fade(#000, 10%);
+    }
+
+    100% {
+        -moz-transform: translate(-50%, -50%) scale(0.5);
+        -ms-transform: translate(-50%, -50%) scale(0.5);
+        -o-transform: translate(-50%, -50%) scale(0.5);
+        -webkit-transform: translate(-50%, -50%) scale(0.5);
+        transform: translate(-50%, -50%) scale(0.5);
+        background: #000;
+    }
+}

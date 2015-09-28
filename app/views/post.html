@@ -1,0 +1,54 @@
+﻿<div id="post" data-bind="with: postManager.post">
+    <div class="post-pre-header fit">
+        <a href="javascript: void(0);" data-bind="click: $parent.navigationManager.router.navigateBack">
+            <span>&larr;</span> Back to the blog
+        </a>
+    </div>
+    <div class="post-header">
+        <img class="post-image" data-bind="attr: { src: image, title: title }" alt="" />
+        <div class="post-title fit" data-bind="html: title"></div>
+        <div class="post-information fit">
+            <span class="post-date" data-bind="text: date.published"></span>
+            <span class="post-author" data-bind="text: author"></span>
+        </div>
+    </div>
+    <div class="post-social fit">
+        <div class="post-social-share" data-bind="css: { expanded: $parent.social.opened }">
+            <button class="button social-facebook" data-bind="data: { title: title, media: image, utm: { medium: 'sharer', source: 'facebook' } }">Facebook</button>
+            <button class="button social-twitter" data-bind="data: { title: title, media: image, utm: { medium: 'sharer', source: 'twitter' } }">Twitter</button>
+            <button class="button social-tumblr" data-bind="data: { title: title, media: image, utm: { medium: 'sharer', source: 'tumblr' } }">Tumblr</button>
+            <button class="button social-google" data-bind="data: { title: title, media: image, utm: { medium: 'sharer', source: 'gplus' } }">Google+</button>
+            <button class="button social-pinterest" data-bind="data: { title: title, media: image, utm: { medium: 'sharer', source: 'pinterest' } }">Pinterest</button>
+            <button class="button social-email" data-bind="data: { title: title, media: image, utm: { medium: 'sharer', source: 'email' } }">Email</button>
+            <button class="button social-share" data-bind="click: $parent.social.toggle">Share this post</button>
+        </div>
+    </div>
+    <div class="post-content fit" data-bind="html: content, anchor: {}"></div>
+    <div class="post-social fit">
+        <div class="post-social-share" data-bind="css: { expanded: $parent.social.opened }">
+            <button class="button social-facebook" data-bind="data: { title: title, media: image, utm: { medium: 'sharer', source: 'facebook' } }">Facebook</button>
+            <button class="button social-twitter" data-bind="data: { title: title, media: image, utm: { medium: 'sharer', source: 'twitter' } }">Twitter</button>
+            <button class="button social-tumblr" data-bind="data: { title: title, media: image, utm: { medium: 'sharer', source: 'tumblr' } }">Tumblr</button>
+            <button class="button social-google" data-bind="data: { title: title, media: image, utm: { medium: 'sharer', source: 'gplus' } }">Google+</button>
+            <button class="button social-pinterest" data-bind="data: { title: title, media: image, utm: { medium: 'sharer', source: 'pinterest' } }">Pinterest</button>
+            <button class="button social-email" data-bind="data: { title: title, media: image, utm: { medium: 'sharer', source: 'email' } }">Email</button>
+            <button class="button social-share" data-bind="click: $parent.social.toggle">Share this post</button>
+        </div>
+    </div>
+    <div class="post-footer fit">
+        <div class="post-footer-content">
+            <!-- ko with: $parent.previous -->
+            <a href="#" class="post-link post-link-previous column-tablet-6" data-bind="attr: { href: hash, title: title }">
+                <span class="button">Previous</span>
+                <span data-bind="text: title"></span>
+            </a>
+            <!-- /ko -->
+            <!-- ko with: $parent.next -->
+            <a href="#" class="post-link post-link-next column-tablet-6" data-bind="attr: { href: hash, title: title }">
+                <span class="button">Next</span>
+                <span data-bind="text: title"></span>
+            </a>
+            <!-- /ko -->
+        </div>
+    </div>
+</div>
